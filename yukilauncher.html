@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loader (allow redirects)</title>
+</head>
+<body>
+<script>
+(async () => {
+  const url = "https://cdn.jsdelivr.net/gh/alecishavoc/newtestingstuff@main/YukiOS.html?t=" + Date.now();
+
+  const res = await fetch(url);
+  const html = await res.text();
+
+  const tab = window.open("about:blank", "_blank");
+  tab.document.open();
+  tab.document.write(html);
+  tab.document.close();
+})();
+</script>
+</body>
+</html>
