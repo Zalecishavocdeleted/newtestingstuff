@@ -1648,15 +1648,12 @@ if (this.p.isFlying || this.p.isUfo) {
     let out = Math.atan2(interpSin, interpCos);
     return out + out;
   }
-  updateGroundRotation(_0x5c24f7) {
+ updateGroundRotation(_0x5c24f7) {
     if (this.p.isBall || this.p.isWave || this.p.isSpider) {
       return;
     }
-    let _0x183c2a = this.convertToClosestRotation();
-    let _0x108955 = 0.47250000000000003;
-    let _0x17a9a6 = Math.min(_0x5c24f7 * 1, _0x108955 * _0x5c24f7);
-    this._rotation = this.slerp2D(this._rotation, _0x183c2a, _0x17a9a6);
-  }
+    this._rotation = this.convertToClosestRotation();
+}
   updateBallRoll(_0x1dd8af, onSurface) {
     const gravityDir = this.p.gravityFlipped ? -1 : 1;
 	  const rollDir = this.p.mirrored ? -gravityDir : gravityDir;
